@@ -1,18 +1,12 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
   const [isConfused, setIsConfused] = useState(true);
 
-  useEffect(() => {
-    const stateOfMind = () => {
-      setInterval(() => {
-        setIsConfused((IsConfused) => !IsConfused);
-      }, 3000); 
-    };
-
-    stateOfMind();
-  }, []); 
+  setInterval(() => {
+    setIsConfused((prevIsConfused) => !prevIsConfused);
+  }, 3000); 
 
   return (
     <>
