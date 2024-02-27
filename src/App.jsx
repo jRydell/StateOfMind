@@ -4,9 +4,14 @@ import './App.css';
 function App() {
   const [isConfused, setIsConfused] = useState(true);
 
-  setInterval(() => {
-    setIsConfused((prevIsConfused) => !prevIsConfused);
-  }, 3000); 
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setIsConfused((IsConfused) => !IsConfused);
+    }, 3000);
+
+    // Cleanup function to clear the interval when the component is unmounted
+    return () => clearInterval(intervalId);
+  }, []); 
 
   return (
     <>
