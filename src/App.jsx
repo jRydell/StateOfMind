@@ -7,8 +7,8 @@ function App() {
   useEffect(() => {
     const stateOfMind = () => {
       setInterval(() => {
-        setIsConfused((prevIsConfused) => !prevIsConfused);
-      }, 1000); 
+        setIsConfused((IsConfused) => !IsConfused);
+      }, 3000); 
     };
 
     stateOfMind();
